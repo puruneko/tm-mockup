@@ -1,0 +1,56 @@
+{
+	"name": "electron-react-ts",
+	"description": "electron-react-ts",
+	"version": "0.1.0",
+	"license": "MIT",
+	"author": {
+		"name": "progp"
+	},
+	"repository": {
+		"url": "https://github.com/progp/electron-react-ts.git"
+	},
+	"main": "dist/main.js",
+	"scripts": {
+		"dev": "rimraf dist && run-p dev:webpack dev:electron",
+		"build": "rimraf dist && cross-env NODE_ENV=\"production\" webpack --progress",
+		"dev:webpack": "cross-env NODE_ENV=\"development\" webpack --progress",
+		"dev:electron": "wait-on dist/main.js dist/index.html && electronmon ."
+	},
+	"electronmon": {
+		"patterns": [
+			"dist/**/*",
+			"!db/**"
+		]
+	},
+	"dependencies": {
+		"pouchdb": "^8.0.1",
+		"pouchdb-browser": "^8.0.1",
+		"pouchdb-find": "^8.0.1",
+		"pouchdb-node": "^8.0.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"uuid": "^9.0.1"
+	},
+	"devDependencies": {
+		"@types/node": "^20.10.4",
+		"@types/pouchdb": "^6.4.2",
+		"@types/pouchdb-find": "^7.3.3",
+		"@types/react": "^18.2.42",
+		"@types/react-dom": "^18.2.17",
+		"@types/uuid": "^9.0.7",
+		"cross-env": "^7.0.3",
+		"css-loader": "^6.8.1",
+		"electron": "^28.0.0",
+		"electronmon": "^2.0.2",
+		"html-webpack-plugin": "^5.5.4",
+		"mini-css-extract-plugin": "^2.7.6",
+		"npm-run-all": "^4.1.5",
+		"rimraf": "^5.0.5",
+		"ts-loader": "^9.5.1",
+		"ts-node": "^10.9.1",
+		"typescript": "^5.3.3",
+		"wait-on": "^7.2.0",
+		"webpack": "^5.89.0",
+		"webpack-cli": "^5.1.4"
+	}
+}

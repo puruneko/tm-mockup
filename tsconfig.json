@@ -1,0 +1,19 @@
+// tsconfig.json
+{
+    "compilerOptions": {
+      "forceConsistentCasingInFileNames": true,
+      "target": "es5",
+      "module": "commonjs",
+      "jsx": "react",
+      "strict": true,
+      "esModuleInterop": true,
+      "downlevelIteration": true, //スプレッド構文
+      "lib": [
+        "DOM",
+        "DOM.Iterable",
+        "ESNext"
+      ],
+      //
+      "noImplicitAny": false,
+    }
+  }
